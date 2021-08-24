@@ -55,17 +55,14 @@
   <ItemGroup>
     <Compile Include="Cocktail.cs" />
     <Compile Include="CocktailContext.cs" />
+    <Compile Include="CocktailIngredients.cs" />
     <Compile Include="DALManager.cs" />
     <Compile Include="ICocktail.cs" />
     <Compile Include="IIngredient.cs" />
     <Compile Include="Ingredient.cs" />
-    <Compile Include="Migrations\202108240806526_InitialCreate.cs" />
-    <Compile Include="Migrations\202108240806526_InitialCreate.designer.cs">
-      <DependentUpon>202108240806526_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108241227238_AddCocktailUrl.cs" />
-    <Compile Include="Migrations\202108241227238_AddCocktailUrl.designer.cs">
-      <DependentUpon>202108241227238_AddCocktailUrl.cs</DependentUpon>
+    <Compile Include="Migrations\202108241756138_CreateDB.cs" />
+    <Compile Include="Migrations\202108241756138_CreateDB.designer.cs">
+      <DependentUpon>202108241756138_CreateDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -76,11 +73,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202108240806526_InitialCreate.resx">
-      <DependentUpon>202108240806526_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108241227238_AddCocktailUrl.resx">
-      <DependentUpon>202108241227238_AddCocktailUrl.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108241756138_CreateDB.resx">
+      <DependentUpon>202108241756138_CreateDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace Cocktails
 {
-    public class Cocktail :ICocktail
+    public class CocktailIngredients
     {
         [Key]
-        public int Id { get; set; }
+        public int CocktailId { get; set; }
         public string Name { get; set; }
-        public List<CocktailIngredients> Ingredients { get; set; }
     }
 }

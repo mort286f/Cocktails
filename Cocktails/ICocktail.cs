@@ -10,6 +10,6 @@ namespace Cocktails
     {
         int Id { get; set; } 
         string Name { get; set; }
-        List<Ingredient> Ingredients { get; set; }
+        List<CocktailIngredients> Ingredients { get; set; }
     }
 }
