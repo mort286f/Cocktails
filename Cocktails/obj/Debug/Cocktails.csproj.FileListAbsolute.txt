@@ -1,0 +1,15 @@
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\bin\Debug\Cocktails.exe.config
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\bin\Debug\Cocktails.exe
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\bin\Debug\Cocktails.pdb
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\bin\Debug\EntityFramework.dll
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\bin\Debug\EntityFramework.xml
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.csprojAssemblyReference.cache
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.csproj.CoreCompileInputs.cache
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.csproj.CopyComplete
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.exe
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.pdb
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.Migrations.InitialCreate.resources
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.csproj.GenerateResource.cache
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.Migrations.AddCocktailUrl.resources
