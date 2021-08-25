@@ -10,9 +10,7 @@ C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.csproj.Co
 C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.csproj.CopyComplete
 C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.exe
 C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.pdb
-C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.Migrations.InitialCreate.resources
 C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.csproj.GenerateResource.cache
-C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.Migrations.AddCocktailUrl.resources
 C:\Users\PC Morten\Documents\GitHub\Cocktails\Cocktails\bin\Debug\Cocktails.exe.config
 C:\Users\PC Morten\Documents\GitHub\Cocktails\Cocktails\bin\Debug\Cocktails.exe
 C:\Users\PC Morten\Documents\GitHub\Cocktails\Cocktails\bin\Debug\Cocktails.pdb
@@ -27,3 +25,4 @@ C:\Users\PC Morten\Documents\GitHub\Cocktails\Cocktails\obj\Debug\Cocktails.exe
 C:\Users\PC Morten\Documents\GitHub\Cocktails\Cocktails\obj\Debug\Cocktails.pdb
 C:\Users\PC Morten\Documents\GitHub\Cocktails\Cocktails\obj\Debug\Cocktails.Migrations.CreateDB.resources
 C:\Users\PC Morten\Documents\GitHub\Cocktails\Cocktails\obj\Debug\Cocktails.csproj.GenerateResource.cache
+C:\Users\mort286f\source\repos\Cocktails\Cocktails\obj\Debug\Cocktails.Migrations.CreateDB.resources

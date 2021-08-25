@@ -77,6 +77,23 @@ namespace Cocktails
                 ctx.SaveChanges();
             }
         }
+        public void GetAllCocktails()
+        {
+            using (var ctx = new CocktailContext())
+            {
+                var cocktails = ctx.Cocktails.Where(x => x.Name != null).Include(i => i.Ingredients).ToList();
+                foreach (var cocktail in ctx.Cocktails)
+                {
+                    Console.WriteLine("\nId: " + cocktail.Id);
+                    Console.WriteLine("Name: " + cocktail.Name);
+                    foreach (var ingredient in cocktail.Ingredients)
+                    {
+                        Console.WriteLine("Ingredient: " + ingredient.Name);
+                    }
+
+                }
+            }
+        }
         public void SetDB()
         {
             using (var ctx = new CocktailContext())
@@ -118,13 +135,17 @@ namespace Cocktails
                 ctx.SaveChanges();
             }
         }
-        public List<Cocktail> GetCocktail(string input)
+        public void GetCocktail(string input)
         {
             using (var ctx = new CocktailContext())
             {
-                var cocktail = ctx.Cocktails.Where(x => x.Name.Equals(input)).Include(x => x.Ingredients).ToList();
-
-                return cocktail;
+                Cocktail cocktail = ctx.Cocktails.Where(x => x.Name.Equals(input)).Include(x => x.Ingredients).FirstOrDefault();
+                Console.WriteLine("Id: " + cocktail.Id);
+                Console.WriteLine("Name: " + cocktail.Name);
+                foreach (var ingredient in cocktail.Ingredients)
+                {
+                    Console.WriteLine("Ingredient: " + ingredient.Name);
+                }
             }
         }
         public void DeleteCocktail(string cocktailName)
@@ -133,6 +154,15 @@ namespace Cocktails
             {
                 List<Cocktail> cocktail = ctx.Cocktails.Where(x => x.Name.Equals(cocktailName)).Include(c => c.Ingredients).ToList();
                 ctx.Cocktails.Remove(cocktail.FirstOrDefault());
+                ctx.SaveChanges();
+            }
+        }
+        public void UpdateCocktail(string cocktailName, string newCocktailName)
+        {
+            using (var ctx = new CocktailContext())
+            {
+                Cocktail cocktail = ctx.Cocktails.Where(x =>x.Name.Equals(cocktailName)).FirstOrDefault();
+                cocktail.Name = newCocktailName;
                 ctx.SaveChanges();
             }
         }
