@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cocktails
 {
+    //Class that represents a mapping table in the database
     public class CocktailIngredients
     {
         [Key]

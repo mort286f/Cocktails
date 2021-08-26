@@ -9,7 +9,7 @@ namespace Cocktails
 {
     class DALManager
     {
-        List<Ingredient> ingredients = new List<Ingredient>()
+        private static List<Ingredient> ingredients = new List<Ingredient>() //List of ingredients to put in the database
         {
 #region ingredients
             new Ingredient(){ Name = "Tequila"},
@@ -48,52 +48,45 @@ namespace Cocktails
 #endregion
         };
 
-        List<Cocktail> cocktails = new List<Cocktail>()
-        {
-            new Cocktail()
-            {
-                Name = "Mai tai",
-                Ingredients = new List<CocktailIngredients>()
-                {
-                    new CocktailIngredients() { Name = "Dark rum"},
-                    new CocktailIngredients() { Name = "Orange"},
-                    new CocktailIngredients(){ Name = "Lime juice"},
-                    new CocktailIngredients(){ Name = "Almond Syrup"}
-                }
-            }
-        };
-
         public void CreateCocktail(string cocktailName, List<CocktailIngredients> ingredients)
         {
+            
             using (var ctx = new CocktailContext())
             {
+                //Create a new cocktail object that gets put into the database via the context class
                 var cocktail = new Cocktail()
                 {
                     Name = cocktailName,
                     Ingredients = ingredients,
                 };
 
+                //Adds the cocktail and saves changes made(this is really important)
                 ctx.Cocktails.Add(cocktail);
                 ctx.SaveChanges();
             }
         }
-        public void GetAllCocktails()
+
+        public Cocktail GetAllCocktails()
         {
             using (var ctx = new CocktailContext())
             {
+                //Gets all cocktails that consists in the databse including their list of ingredients.
                 var cocktails = ctx.Cocktails.Where(x => x.Name != null).Include(i => i.Ingredients).ToList();
                 foreach (var cocktail in ctx.Cocktails)
                 {
                     Console.WriteLine("\nId: " + cocktail.Id);
                     Console.WriteLine("Name: " + cocktail.Name);
+                    //Foreach to get all elements in the list of ingredients
                     foreach (var ingredient in cocktail.Ingredients)
                     {
                         Console.WriteLine("Ingredient: " + ingredient.Name);
                     }
-
                 }
+                return cocktails.FirstOrDefault();
             }
         }
+
+        //Populates the DB with data, Only necessary to run once
         public void SetDB()
         {
             using (var ctx = new CocktailContext())
@@ -135,32 +128,31 @@ namespace Cocktails
                 ctx.SaveChanges();
             }
         }
-        public void GetCocktail(string input)
+        public Cocktail GetCocktail(string input)
         {
             using (var ctx = new CocktailContext())
             {
+                //Finds the cocktail that has the same name as the one the user requested including its ingredients
                 Cocktail cocktail = ctx.Cocktails.Where(x => x.Name.Equals(input)).Include(x => x.Ingredients).FirstOrDefault();
-                Console.WriteLine("Id: " + cocktail.Id);
-                Console.WriteLine("Name: " + cocktail.Name);
-                foreach (var ingredient in cocktail.Ingredients)
-                {
-                    Console.WriteLine("Ingredient: " + ingredient.Name);
-                }
+                return cocktail;
             }
         }
         public void DeleteCocktail(string cocktailName)
         {
             using (var ctx = new CocktailContext())
             {
+                //Finds the cocktail to delete based on what the user inputted
                 List<Cocktail> cocktail = ctx.Cocktails.Where(x => x.Name.Equals(cocktailName)).Include(c => c.Ingredients).ToList();
-                ctx.Cocktails.Remove(cocktail.FirstOrDefault());
+                ctx.Cocktails.Remove(cocktail.FirstOrDefault()); //Removes the first occurences
                 ctx.SaveChanges();
             }
         }
+
         public void UpdateCocktail(string cocktailName, string newCocktailName)
         {
             using (var ctx = new CocktailContext())
             {
+                //First, finds first occurence of the searched cocktail, since the cocktail name should be unique.
                 Cocktail cocktail = ctx.Cocktails.Where(x =>x.Name.Equals(cocktailName)).FirstOrDefault();
                 cocktail.Name = newCocktailName;
                 ctx.SaveChanges();

@@ -11,13 +11,12 @@ namespace Cocktails
     {
         static void Main(string[] args)
         {
-
             DALManager manager = new DALManager();
-            //manager.UpdateCocktail("Mojitoo", "Mojito");
 
             Console.WriteLine("Welcome to this awesome program about cocktails");
             int input;
 
+            //UI interface
             do
             {
                 Console.WriteLine("(1) Get all cocktails");
@@ -25,6 +24,7 @@ namespace Cocktails
                 Console.WriteLine("(3) Create cocktail");
                 Console.WriteLine("(4) Update cocktail name");
                 Console.WriteLine("(5) Delete a cocktail");
+                Console.WriteLine("(8) Populate DB");
                 Console.WriteLine("(9) Exit console");
                 input = int.Parse(Console.ReadLine());
 
@@ -36,7 +36,13 @@ namespace Cocktails
                     case 2:
                         Console.WriteLine("Input search parameter for cocktail:");
                         string cocktailSearch = Console.ReadLine();
-                        manager.GetCocktail(cocktailSearch);
+                        Cocktail cocktail = manager.GetCocktail(cocktailSearch);
+                        Console.WriteLine("Id: " + cocktail.Id);
+                        Console.WriteLine("Name: " + cocktail.Name);
+                        foreach (var ingredient in cocktail.Ingredients)
+                        {
+                            Console.WriteLine("Ingredient: " + ingredient.Name);
+                        }
                         break;
                     case 3:
                         Console.WriteLine("Not implemented yet ");
@@ -55,6 +61,9 @@ namespace Cocktails
                         string cocktailNameForDel = Console.ReadLine();
                         manager.DeleteCocktail(cocktailNameForDel);
                         break;
+                    case 8:
+                        manager.SetDB();
+                        break;
                     default:
                         break;
                 }
@@ -64,25 +73,6 @@ namespace Cocktails
 
 
             } while (input != 9);
-            //manager.DeleteCocktail("Lime juice");
-            //manager.CreateCocktail("Lime juice", new List<CocktailIngredients> 
-            //{ 
-            //    new CocktailIngredients() { Name = "Soda"}, 
-            //    new CocktailIngredients() { Name = "Tomato Juice"}, 
-            //    new CocktailIngredients() { Name = "Triple Sec"}
-            //});
-            //manager.SetDB();
-            //List<Cocktail> cocktail = manager.GetCocktail("Magarita");
-            //foreach (var item in cocktail)
-            //{
-            //    Console.WriteLine(item.Id);
-            //    Console.WriteLine(item.Name);
-            //    foreach (var ingredients in item.Ingredients)
-            //    {
-            //        Console.WriteLine(ingredients.Name);
-            //    }
-            //}
-            //Console.Read();
         }
     }
 }

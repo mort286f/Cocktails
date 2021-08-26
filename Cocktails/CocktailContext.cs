@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cocktails
 {
+    //The context class for writing to the database
     class CocktailContext : DbContext
     {
         public DbSet<Cocktail> Cocktails { get; set; }
